@@ -1,0 +1,29 @@
+<ion-view view-title="Weather">
+  <ion-content class="padding">
+
+
+    <ion-google-place placeholder="Start typing city name" ng-model="data" location-changed="locationChanged"></ion-google-place>
+
+    <div class="card weatherCard" ng-show="isCityChoosen">
+      <div class="item item-divider">
+        {{currentCity.name}}
+      </div>
+      <div class="item item-text-wrap">
+        <h2>{{currentCity.temp}}°C</h2>
+        <img src="{{currentCity.iconUrl}}" alt="{{currentCity.desc}}">
+        <h2>{{currentCity.desc}}</h2>
+      </div>
+      <div class="item item-divider">
+        <button class="button button-positive" ng-click="addToFavorites()">
+          Add city to favorites
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+
+  </ion-content>
+</ion-view>
